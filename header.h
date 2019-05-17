@@ -1,13 +1,7 @@
 //supplier, customer, order, warehouse, item, record
 typedef struct item
 {
-	double length;
-	double breadth;
-	double height;
-	double weight;
-	int shelf_life;//days
-	double price;
-	int lead_time;//days....???
+	int price;
 	int id ;
 	int count;
 }item;
@@ -40,16 +34,9 @@ typedef struct order
 typedef struct warehouse
 {
 	int id;
-	char location[100];
 	int max_capacity;
 	int current_capacity;
-	double operating_cost;
-	int work_start;//time
-	int work_end;
-	int number_of_shifts;//?
-	char item_ids[1000];
-	char item_demand[1000];
-	item items[];
+	item items[100];
 }warehouse;
 //report with time duration
 
@@ -60,6 +47,9 @@ typedef struct record
 	int customer_id;//-1
 	int order_id;//-1
 	int warehouse_id;
+	int day;
+	int month;
+	int year;
 }record;
 /*typedef struct company
 {

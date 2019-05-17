@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include "header.h"
 
-void removeitem(warehouse *Warehouses[],int warehouse_id, int item_id ,int count)
+/*void removeitem(warehouse *Warehouses[],int warehouse_id, int item_id ,int count)
 {
 	int j;
 	warehouse W;
@@ -151,5 +151,5 @@ void monthly(record *records[],int warehouse_id, int month, int year)
 			}
 		}
 	}
-}
+}*/
 
