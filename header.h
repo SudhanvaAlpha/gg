@@ -33,6 +33,9 @@ typedef struct order
 	int lead_time;
 	double cost;
 	double tax;//outgoing?
+	int day;
+	int month;
+	int year;
 }order;
 typedef struct warehouse
 {

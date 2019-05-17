@@ -120,3 +120,36 @@ void  procure(supplier *suppliers[] ,int *item_ids)
 	}	
 }
 
+void daily(record *records[],int warehouse_id, int day, int month, int year)
+{
+	int n = sizeof(*records);
+	for(int i=0;i<n;i++)
+	{
+		if(records[i]->warehouse_id==warehouse_id)
+		{
+			if(records[i]->day==day &&records[i]->month==month)
+			{
+				if(records[i]->year==year)
+					{printf("%d %d %d", records[i]->warehouse_id , records[i]->order_id, records[i]->customer_id);}
+			}
+		}
+	}
+}
+
+
+void monthly(record *records[],int warehouse_id, int day, int month, int year)
+{
+	int n = sizeof(*records);
+	for(int i=0;i<n;i++)
+	{
+		if(records[i]->warehouse_id==warehouse_id)
+		{
+			if(records[i]->month==month)
+			{
+				if(records[i]->year==year)
+					{printf("%d %d %d", records[i]->warehouse_id , records[i]->order_id, records[i]->customer_id);}
+			}
+		}
+	}
+}
+
