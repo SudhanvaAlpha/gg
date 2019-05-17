@@ -174,7 +174,7 @@ void populateWfromFile(struct warehouse *w, int *c)
 int umenu()
 {
 	int ch;
-	printf("%s\n", "Enter 1 to buy Items");
+	printf("Enter 1 to buy Items\n");
 	printf("%s\n", "Enter 2 to remove/sell Items");
 	printf("%s\n", "Enter 3 to get a list of current Items");//Sorted
 	//printf("%s\n", "Days Report");
@@ -192,6 +192,7 @@ int umenu()
 
 void modifyW(struct warehouse *w,struct warehouse *wm)
 {
+	
 
 }
 
@@ -243,11 +244,23 @@ int main()
     int i,j;
     if(sel == 1)
     {
-
-    }
+		printf("Enter WAREHOUSE ID\n");
+		scanf("%d",&did);
+		printf("Enter ITEM ID\n");
+		scanf("%d",&i);
+		printf("Enter COUNT\n");
+		scanf("%d",&j);
+		additem(w,did,i,j);
+	}
 	if(sel == 2)
     {
-    	
+    	printf("Enter WAREHOUSE ID\n");
+		scanf("%d",&did);
+		printf("Enter ITEM ID\n");
+		scanf("%d",&i);
+		printf("Enter COUNT\n");
+		scanf("%d",&j);
+		removeitem(w,did,i,j);
     }
     if(sel == 3)
     {
