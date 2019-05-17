@@ -1,0 +1,37 @@
+--
+6
+2, KR Road, Bangalore
+2000
+5
+200
+8
+9
+2
+1
+3d,2d,4r,4w,2t,
+0,0.1,0.4,1,0.2,
+--
+3
+2, KR Road, Bangalore
+3000
+5
+500
+9
+9
+3
+0
+1asd,2df,4fgf,ddd,2cf,
+1,1,0.6,0,1,
+--
+8
+2, KR Road, Bangalore
+3000
+5
+500
+9
+9
+3
+0
+1asd,2df,4fgf,3fddd,2cf,
+1,1,0.6,0,1,
+--

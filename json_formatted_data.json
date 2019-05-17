@@ -1,0 +1,18 @@
+{
+	"warehouse":
+	[
+	  {"id":"","location":"","max_capacity":"","current_capacity":"","operating_cost":"","work_start":"","work_end":"","number_of_shifts":"","meets_demand":"","item_ids":[],"item_demand":[]},
+	  {"id":"","location":"","max_capacity":"","current_capacity":"","operating_cost":"","work_start":"","work_end":"","number_of_shifts":"","meets_demand":"","item_ids":[],"item_demand":[]}
+	]
+}id:
+location:
+max_capacity:
+current_capacity:
+operating_cost:
+work_start:
+work_end:
+number_of_shifts:
+meets_demand:
+item_ids:[]
+item_demand:[]
+--
