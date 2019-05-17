@@ -17,16 +17,16 @@ typedef struct company
 
 
 
-void removeitem(warehouse *Warehouses[],int warehouse_id, int item_id ,int count)
+void removeitem(warehouse *Warehouses,int warehouse_id, int item_id ,int count)
 {
 	int j=0;
 	warehouse W;
 	int flagw=0;
 	while(j<2)
 	{
-		if (Warehouses[j]->id== warehouse_id)
+		if (Warehouses[j].id== warehouse_id)
 		{
-			W=*Warehouses[j];
+			W=Warehouses[j];
 			flagw=1;
 			break;
 		}
@@ -43,8 +43,8 @@ void removeitem(warehouse *Warehouses[],int warehouse_id, int item_id ,int count
 	{
 		 if(W.items[i].id == item_id)
 		 {
-		 	if(Warehouses[j]->items[i].count> count )
-		 		Warehouses[j]->items[i].count= Warehouses[j]->items[i].count - count ;
+		 	if(Warehouses[j].items[i].count> count )
+		 		Warehouses[j].items[i].count= Warehouses[j].items[i].count - count ;
 		 	else
 		 	{
 		 		printf("not enough stock\n");
@@ -64,16 +64,16 @@ void removeitem(warehouse *Warehouses[],int warehouse_id, int item_id ,int count
 }
 
 
-void additem(warehouse* Warehouses[] ,int warehouse_id,int item_id ,int count)
+void additem(warehouse* Warehouses ,int warehouse_id,int item_id ,int count)
 {
 	int j=0;
 	warehouse W;
 	int flagw=0;
 	while(j<2)
 	{
-		if ((*Warehouses)[j].id== warehouse_id)
+		if (Warehouses[j].id== warehouse_id)
 		{
-			W=*Warehouses[j];
+			W=Warehouses[j];
 			flagw=1;
 			break;
 		}
@@ -92,7 +92,7 @@ void additem(warehouse* Warehouses[] ,int warehouse_id,int item_id ,int count)
 	{
 		if(W.items[i].id == item_id)
 		 {
-		 	(*Warehouses)[j].items[i].count= (*Warehouses)[j].items[i].count + count ;
+		 	Warehouses[j].items[i].count= Warehouses[j].items[i].count + count ;
 			flag=1;
 			break;
 		 }
@@ -153,34 +153,34 @@ void  procure(supplier* suppliers[] ,int *item_ids)
 	}	
 }
 
-void daily(record* records[],int warehouse_id, int day, int month, int year)
+void daily(record* records,int warehouse_id, int day, int month, int year)
 {
 	int n = sizeof(*records);
 	for(int i=0;i<n;i++)
 	{
-		if(records[i]->warehouse_id==warehouse_id)
+		if(records[i].warehouse_id==warehouse_id)
 		{
-			if(records[i]->day==day &&records[i]->month==month)
+			if(records[i].day==day &&records[i].month==month)
 			{
-				if(records[i]->year==year)
-					{printf("%d %d %d", records[i]->warehouse_id , records[i]->order_id, records[i]->customer_id);}
+				if(records[i].year==year)
+					{printf("%d %d %d", records[i].warehouse_id , records[i].order_id, records[i].customer_id);}
 			}
 		}
 	}
 }
 
 
-void monthly(record *records[],int warehouse_id, int month, int year)
+void monthly(record *records,int warehouse_id, int month, int year)
 {
 	int n = sizeof(*records);
 	for(int i=0;i<n;i++)
 	{
-		if(records[i]->warehouse_id==warehouse_id)
+		if(records[i].warehouse_id==warehouse_id)
 		{
-			if(records[i]->month==month)
+			if(records[i].month==month)
 			{
-				if(records[i]->year==year)
-					{printf("%d %d %d", records[i]->warehouse_id , records[i]->order_id, records[i]->customer_id);}
+				if(records[i].year==year)
+					{printf("%d %d %d", records[i].warehouse_id , records[i].order_id, records[i].customer_id);}
 			}
 		}
 	}
@@ -439,7 +439,7 @@ int main()
 	Records[1].day=23;
 	Records[1].month=5;
 	Records[1].year=2019;
-	record** Rec=&Records;
+	//record** Rec=&Records;
 
     int did;
     int j,k;
@@ -451,7 +451,7 @@ int main()
 		scanf("%d",&i);
 		printf("Enter COUNT\n");
 		scanf("%d",&j);
-		additem(ware,did,i,j);
+		additem(w,did,i,j);
 	}
 	if(sel == 2)
     {
@@ -461,7 +461,7 @@ int main()
 		scanf("%d",&i);
 		printf("Enter COUNT\n");
 		scanf("%d",&j);
-		removeitem(ware,did,i,j);
+		removeitem(w,did,i,j);
     }
     if(sel == 3)
     {
@@ -490,7 +490,7 @@ int main()
 		scanf("%d",&j);
 		printf("Enter the YEAR\n");
 		scanf("%d",&k);
-		daily(Rec,did,i,j,k);
+		daily(Records,did,i,j,k);
 	}
 	if(sel==5)
 	{
@@ -500,7 +500,7 @@ int main()
 		scanf("%d",&j);
 		printf("Enter the YEAR\n");
 		scanf("%d",&k);
-		monthly(Rec,did,j,k);
+		monthly(Records,did,j,k);
 	}
 
 
