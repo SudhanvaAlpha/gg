@@ -137,7 +137,7 @@ void daily(record *records[],int warehouse_id, int day, int month, int year)
 }
 
 
-void monthly(record *records[],int warehouse_id, int day, int month, int year)
+void monthly(record *records[],int warehouse_id, int month, int year)
 {
 	int n = sizeof(*records);
 	for(int i=0;i<n;i++)
